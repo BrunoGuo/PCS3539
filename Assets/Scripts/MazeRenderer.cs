@@ -31,7 +31,7 @@ public class MazeRenderer : MonoBehaviour {
 
     private void Draw(WallPosition[,] maze) {
         var floor = Instantiate(floorPrefab, transform);
-        floor.localScale = new Vector3(cellSize * width, 1, cellSize * height);
+        floor.localScale = new Vector3(cellSize * width * 2, 1, cellSize * height * 2);
         floor.Translate(cellSize * (width - 2) / 2, - cellSize / 2, cellSize * (height - 2) / 2);
 
         for (int i = 0; i < width; i++) {
@@ -76,7 +76,7 @@ public class MazeRenderer : MonoBehaviour {
         var rng = new System.Random();
         var randomIndex = rng.Next(0, height - 1);
         var trigger = Instantiate(endGameTrigger, transform) as Transform;
-        trigger.position = new Vector3(-width/2 + (width - 1) * cellSize, -4, -height/2 + randomIndex * cellSize);
+        trigger.position = new Vector3(-width/2 + (width - 1) * cellSize, -5.4f, -height/2 + randomIndex * cellSize);
     }
 
     void Update() {
