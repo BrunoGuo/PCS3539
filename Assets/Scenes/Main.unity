@@ -417,6 +417,7 @@ MonoBehaviour:
   wallPrefab: {fileID: 3596043135731176023, guid: ffb732dce0ca05e4494805007f53eae8, type: 3}
   floorPrefab: {fileID: 5864530307653077461, guid: 7fd29b4eae4ea5944a64aa367fcd6993, type: 3}
   endGameTrigger: {fileID: 874838778995242472, guid: 127ba916311f08a499c943a71fe37177, type: 3}
+  candlePrefab: {fileID: 4171262313632050, guid: 263b26f2316871f46a4bda232a61ec44, type: 3}
 --- !u!4 &1093174310
 Transform:
   m_ObjectHideFlags: 0
@@ -923,7 +924,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64e54ace46aa4fe47af4d3682c4437b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensitivity: 130
+  mouseSensitivity: 300
   playerBody: {fileID: 604610128}
 --- !u!1 &2017781717
 GameObject:

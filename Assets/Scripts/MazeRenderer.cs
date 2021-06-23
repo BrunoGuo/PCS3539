@@ -8,6 +8,7 @@ public class MazeRenderer : MonoBehaviour {
     [SerializeField]
     [Range(1, 50)]
     private int width = 10;
+    private List<Color> colorList = new List<Color> {Color.red, new Color(1, 0.5f, 0, 1), Color.yellow, Color.green, Color.cyan, Color.blue, Color.magenta, Color.white};
 
     [SerializeField]
     [Range(1, 50)]
@@ -24,9 +25,22 @@ public class MazeRenderer : MonoBehaviour {
     [SerializeField]
     private Transform endGameTrigger = null;
 
+    [SerializeField]
+    private Transform candlePrefab = null;
+
+    public struct Position {
+        public int x;
+        public int y;
+    }
+
     void Start() {
         var maze = MazeGenerator.GenerateMaze(width, height);
         Draw(maze);
+    }
+
+    private void setRandomColor(Transform obj, int index){
+        Light lt = obj.GetComponent<Light>();
+        lt.color = colorList[index];
     }
 
     private void Draw(WallPosition[,] maze) {
@@ -72,8 +86,37 @@ public class MazeRenderer : MonoBehaviour {
             }
         }
 
-        // colocar o objeto de fim de jogo
         var rng = new System.Random();
+        var positionList = new List<Position>();
+        for (int i = 0; i < 2; i++) {
+            float x = rng.Next(0, width/2) * cellSize;
+            float y = rng.Next(0, height/2) * cellSize;
+
+            var candle0 = Instantiate(candlePrefab, transform) as Transform;
+            var candle1 = Instantiate(candlePrefab, transform) as Transform;
+            var candle2 = Instantiate(candlePrefab, transform) as Transform;
+            var candle3 = Instantiate(candlePrefab, transform) as Transform;
+
+            candle0.position = new Vector3(x - cellSize/2, -5, y - cellSize/2);
+            setRandomColor(candle0, i*4);
+
+            x = rng.Next(width/2, width) * cellSize;
+            y = rng.Next(0, height/2) * cellSize;
+            candle1.position = new Vector3(x - cellSize/2, -5, y - cellSize/2);
+            setRandomColor(candle1, i*4 + 1);
+
+            x = rng.Next(0, width/2) * cellSize;
+            y = rng.Next(height/2, height) * cellSize;
+            candle2.position = new Vector3(x - cellSize/2, -5, y - cellSize/2);
+            setRandomColor(candle2, i*4 + 2);
+
+            x = rng.Next(width/2, width) * cellSize;
+            y = rng.Next(height/2, height) * cellSize;
+            candle3.position = new Vector3(x - cellSize/2, -5, y - cellSize/2);
+            setRandomColor(candle3, i*4 + 3);
+        }
+
+        // colocar o objeto de fim de jogo
         var randomIndex = rng.Next(0, height - 1);
         var trigger = Instantiate(endGameTrigger, transform) as Transform;
         trigger.position = new Vector3(-width/2 + (width - 1) * cellSize, -5.4f, -height/2 + randomIndex * cellSize);
