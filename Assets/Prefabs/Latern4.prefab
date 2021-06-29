@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4989002212224816}
   - component: {fileID: 33142437618606260}
   - component: {fileID: 23926068816924486}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Latern4.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 212265844475485128}
   - component: {fileID: 95820833305167774}
   - component: {fileID: 114254055358124770}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: red_flame_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -208,7 +208,7 @@ GameObject:
   - component: {fileID: 4017726360588048}
   - component: {fileID: 33285062982948414}
   - component: {fileID: 23541984462018898}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cylinder.012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -289,7 +289,7 @@ GameObject:
   - component: {fileID: 4086583597286622}
   - component: {fileID: 33115330437757784}
   - component: {fileID: 23544531764870582}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Candle3.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -371,9 +371,10 @@ GameObject:
   - component: {fileID: 33409300199090056}
   - component: {fileID: 23165763573161012}
   - component: {fileID: 5054609427112324090}
-  m_Layer: 0
+  - component: {fileID: 3391591657248960727}
+  m_Layer: 7
   m_Name: Latern4
-  m_TagString: Untagged
+  m_TagString: vela
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -507,3 +508,16 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!65 &3391591657248960727
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1530244972883782}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3, y: 3, z: 10}
+  m_Center: {x: 0, y: 0, z: 0}
