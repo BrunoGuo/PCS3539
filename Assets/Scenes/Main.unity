@@ -958,6 +958,7 @@ GameObject:
   - component: {fileID: 2017781718}
   - component: {fileID: 2017781719}
   - component: {fileID: 2017781720}
+  - component: {fileID: 2017781721}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -1053,4 +1054,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c73fead2e08356458afda54c5c3395b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alpha: 5
+  maxAngle: 0
+  angleRate: 0
+--- !u!65 &2017781721
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2017781717}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 3, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
