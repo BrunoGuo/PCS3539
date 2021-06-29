@@ -5,18 +5,20 @@ using UnityEngine;
 public class LanterBoost : MonoBehaviour
 {
     private Light myLight;
-    [SerializeField] private int alpha;
+    [SerializeField] private int maxAngle;
     private bool boost;
     private float t;
     private float spotAngle;
+    [SerializeField] private float angleRate;
 
     // Start is called before the first frame update
     void Start()
     {
         myLight = GetComponent<Light>();
-        alpha = 120;
+        maxAngle = 120;
         boost = false;
         spotAngle = myLight.spotAngle;
+        angleRate = 0.1f;
     }
 
     // Update is called once per frame
@@ -24,25 +26,17 @@ public class LanterBoost : MonoBehaviour
     {
         if (myLight.spotAngle > spotAngle)
         {
-            myLight.spotAngle = myLight.spotAngle - 0.1f;
-        }
-        if (!boost)
-        {
-            if (Input.GetKeyDown("space"))
-            {
-                Debug.Log("Space was pressed");
-                myLight.spotAngle = alpha;
-                boost = true;
-                t = 0;
-            }
-        } else
-        {
-            if (t >= 30)
-            {
-                boost = false;
-            }
-            t = t + Time.deltaTime;
+            myLight.spotAngle = myLight.spotAngle - angleRate;
         }
     }
 
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "vela" && Input.GetKeyDown("space"))
+        {
+            Destroy(other.gameObject);
+            Debug.Log("Roubo de vela");
+            myLight.spotAngle = maxAngle;
+        }
+    }
 }

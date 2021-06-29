@@ -114,6 +114,21 @@ public class MazeRenderer : MonoBehaviour {
             y = rng.Next(height/2, height) * cellSize;
             candle3.position = new Vector3(x - cellSize/2, -5, y - cellSize/2);
             setRandomColor(candle3, i*4 + 3);
+
+            BoxCollider box0 = candle0.GetComponent<BoxCollider>();
+            BoxCollider box1 = candle0.GetComponent<BoxCollider>();
+            BoxCollider box2 = candle0.GetComponent<BoxCollider>();
+            BoxCollider box3 = candle0.GetComponent<BoxCollider>();
+
+            box0.isTrigger = true;
+            box1.isTrigger = true;
+            box2.isTrigger = true;
+            box3.isTrigger = true;
+
+            box0.size = new Vector3(cellSize / 8, 5, cellSize / 8);
+            box1.size = new Vector3(cellSize / 8, 5, cellSize / 8);
+            box2.size = new Vector3(cellSize / 8, 5, cellSize / 8);
+            box3.size = new Vector3(cellSize / 8, 5, cellSize / 8);
         }
 
         // colocar o objeto de fim de jogo
