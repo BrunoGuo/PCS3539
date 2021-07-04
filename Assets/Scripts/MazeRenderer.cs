@@ -116,9 +116,9 @@ public class MazeRenderer : MonoBehaviour {
             setRandomColor(candle3, i*4 + 3);
 
             BoxCollider box0 = candle0.GetComponent<BoxCollider>();
-            BoxCollider box1 = candle0.GetComponent<BoxCollider>();
-            BoxCollider box2 = candle0.GetComponent<BoxCollider>();
-            BoxCollider box3 = candle0.GetComponent<BoxCollider>();
+            BoxCollider box1 = candle1.GetComponent<BoxCollider>();
+            BoxCollider box2 = candle2.GetComponent<BoxCollider>();
+            BoxCollider box3 = candle3.GetComponent<BoxCollider>();
 
             box0.isTrigger = true;
             box1.isTrigger = true;

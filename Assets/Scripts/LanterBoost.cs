@@ -6,7 +6,7 @@ public class LanterBoost : MonoBehaviour
 {
     private Light myLight;
     [SerializeField] private int maxAngle;
-    private bool boost;
+    // private bool boost;
     private float t;
     private float spotAngle;
     [SerializeField] private float angleRate;
@@ -16,9 +16,9 @@ public class LanterBoost : MonoBehaviour
     {
         myLight = GetComponent<Light>();
         maxAngle = 120;
-        boost = false;
+        // boost = false;
         spotAngle = myLight.spotAngle;
-        angleRate = 0.1f;
+        angleRate = 0.02f;
     }
 
     // Update is called once per frame
@@ -37,6 +37,7 @@ public class LanterBoost : MonoBehaviour
             Destroy(other.gameObject);
             Debug.Log("Roubo de vela");
             myLight.spotAngle = maxAngle;
+            myLight.intensity = 14;
         }
     }
 }
